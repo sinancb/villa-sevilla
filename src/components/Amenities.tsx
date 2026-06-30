@@ -9,9 +9,7 @@ import {
   UtensilsCrossed,
   Flame,
   Car,
-  Sparkles,
-  Shirt,
-  Sun,
+
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
@@ -27,9 +25,6 @@ const amenities = [
   { key: "kitchen",   Icon: UtensilsCrossed },
   { key: "bbq",       Icon: Flame },
   { key: "parking",   Icon: Car },
-  { key: "cleaning",  Icon: Sparkles },
-  { key: "towels",    Icon: Shirt },
-  { key: "sunbeds",   Icon: Sun },
 ] as const;
 
 const Amenities = () => {

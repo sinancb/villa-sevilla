@@ -50,7 +50,7 @@ export const t = {
       pool:      { TR: "Özel Yüzme Havuzu",    EN: "Private Swimming Pool" },
       seaview:   { TR: "Deniz Manzarası",      EN: "Sea View" },
       ac:        { TR: "Klima (Tüm Odalarda)", EN: "Air Conditioning (All Rooms)" },
-      wifi:      { TR: "Ücretsiz Wi-Fi",       EN: "Free Wi-Fi" },
+      wifi:      { TR: "Yüksek Hız Fiber Wi-Fi", EN: "High-Speed Fiber Wi-Fi" },
       kitchen:   { TR: "Tam Donanımlı Mutfak", EN: "Fully Equipped Kitchen" },
       bbq:       { TR: "Barbekü Alanı",        EN: "BBQ Area" },
       parking:   { TR: "Özel Otopark",         EN: "Private Parking" },

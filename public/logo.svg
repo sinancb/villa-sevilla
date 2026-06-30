@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#0b1623"/>
+
+  <!-- Outer decorative ring -->
+  <circle cx="256" cy="256" r="228" fill="none" stroke="#fbbf24" stroke-width="0.8" opacity="0.2"/>
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#fbbf24" stroke-width="0.5" opacity="0.12"/>
+
+  <!-- Mountain silhouette behind monogram -->
+  <path d="M60,310 L120,230 L170,265 L230,195 L256,215 L282,195 L342,265 L392,230 L452,310 Z"
+        fill="#0f2b4a" opacity="0.9"/>
+  <path d="M80,310 L145,250 L185,272 L230,215 L256,232 L282,215 L327,272 L367,250 L432,310 Z"
+        fill="#091a2d" opacity="0.95"/>
+
+  <!-- VS monogram -->
+  <!-- V -->
+  <text x="185" y="310"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="175"
+        font-weight="300"
+        fill="white"
+        opacity="0.95"
+        text-anchor="middle">V</text>
+  <!-- S in amber -->
+  <text x="332" y="310"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="175"
+        font-weight="300"
+        font-style="italic"
+        fill="#fbbf24"
+        text-anchor="middle">S</text>
+
+  <!-- Thin amber divider -->
+  <line x1="156" y1="334" x2="356" y2="334" stroke="#fbbf24" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- VILLA SEVILLA -->
+  <text x="256" y="370"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="28"
+        font-weight="400"
+        fill="white"
+        opacity="0.88"
+        text-anchor="middle"
+        letter-spacing="10">VILLA SEVILLA</text>
+
+  <!-- ÖLÜDENIZ · FETHİYE -->
+  <text x="256" y="400"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14"
+        fill="#fbbf24"
+        opacity="0.55"
+        text-anchor="middle"
+        letter-spacing="5">ÖLÜDENIZ · FETHİYE</text>
+
+  <!-- Stars -->
+  <circle cx="108" cy="108" r="1.8" fill="white" opacity="0.5"/>
+  <circle cx="404" cy="108" r="1.8" fill="white" opacity="0.5"/>
+  <circle cx="108" cy="404" r="1.8" fill="white" opacity="0.3"/>
+  <circle cx="404" cy="404" r="1.8" fill="white" opacity="0.3"/>
+  <circle cx="256" cy="75"  r="1.4" fill="#fbbf24" opacity="0.6"/>
+</svg>

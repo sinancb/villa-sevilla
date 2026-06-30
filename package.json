@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "fetch-ical": "node scripts/fetch-ical.mjs",
+    "build": "node scripts/fetch-ical.mjs && vite build",
     "preview": "vite preview",
     "lint": "eslint ."
   },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, CalendarDays } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 
@@ -15,17 +15,6 @@ function calcSun(): SunProps | null {
   const progress = (d - 7) / 13;
   const arc = 1 - 4 * (progress - 0.5) ** 2;
   return { x: 8 + progress * 84, y: 80 - arc * 70, progress, isGolden: progress < 0.12 || progress > 0.88 };
-}
-
-// Fixed upcoming holidays — show exactly these two
-const HOLIDAYS: { date: string; tr: string; en: string; dayTR: string; dayEN: string }[] = [
-  { date: "2026-07-15", tr: "Demokrasi ve Milli Birlik Günü", en: "Democracy & National Unity Day", dayTR: "Çarşamba", dayEN: "Wednesday" },
-  { date: "2026-08-30", tr: "Zafer Bayramı",                  en: "Victory Day",                    dayTR: "Pazar",    dayEN: "Sunday"    },
-];
-
-function fmtDate(iso: string, locale: string) {
-  const [y, m, d] = iso.split("-").map(Number);
-  return new Date(y, m - 1, d).toLocaleDateString(locale, { day: "numeric", month: "long" });
 }
 
 // Night assets
@@ -81,7 +70,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative flex min-h-[78vh] items-center justify-center overflow-hidden"
+      className="relative flex min-h-[62vh] items-center justify-center overflow-hidden sm:min-h-[78vh]"
       style={{ background: isDay ? dayBg : nightBg }}
     >
       {/* ── DAY ───────────────────────────────────── */}
@@ -153,7 +142,7 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-background/65" />
 
       {/* ── CONTENT ───────────────────────────────── */}
-      <div className="relative z-10 container flex flex-col items-center px-6 py-12 text-center">
+      <div className="relative z-10 container flex flex-col items-center px-6 py-8 text-center sm:py-12">
 
         {/* Location */}
         <div className="mb-6 flex items-center gap-3 animate-fade-up [animation-delay:0.1s]">
@@ -202,51 +191,12 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Holidays widget — inline on mobile only */}
-        <div className={`mt-5 w-52 rounded-xl border p-3 backdrop-blur-sm sm:hidden ${isDay ? "border-white/25 bg-white/10" : "border-white/15 bg-black/30"}`}>
-          <div className="mb-2 flex items-center gap-1.5">
-            <CalendarDays className="h-3.5 w-3.5 text-amber-400" strokeWidth={1.5} />
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/80">
-              {lang === "TR" ? "Yaklaşan Tatiller" : "Upcoming Holidays"}
-            </p>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            {HOLIDAYS.map((h) => (
-              <div key={h.date} className="flex flex-col gap-0.5">
-                <p className="text-[11px] leading-tight text-white/90 font-medium">{lang === "TR" ? h.tr : h.en}</p>
-                <p className="text-[10px] text-amber-400/90">
-                  {fmtDate(h.date, lang === "TR" ? "tr-TR" : "en-GB")} · {lang === "TR" ? h.dayTR : h.dayEN}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      {/* ── UPCOMING HOLIDAYS WIDGET — absolute on sm+ ── */}
-      <div className={`absolute bottom-28 right-4 z-20 hidden w-52 rounded-xl border p-3 backdrop-blur-sm sm:block sm:right-8 ${isDay ? "border-white/25 bg-white/10" : "border-white/15 bg-black/30"}`}>
-        <div className="mb-2 flex items-center gap-1.5">
-          <CalendarDays className="h-3.5 w-3.5 text-amber-400" strokeWidth={1.5} />
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-white/80">
-            {lang === "TR" ? "Yaklaşan Tatiller" : "Upcoming Holidays"}
-          </p>
-        </div>
-        <div className="flex flex-col gap-1.5">
-          {HOLIDAYS.map((h) => (
-            <div key={h.date} className="flex flex-col gap-0.5">
-              <p className="text-[11px] leading-tight text-white/90 font-medium">{lang === "TR" ? h.tr : h.en}</p>
-              <p className="text-[10px] text-amber-400/90">
-                {fmtDate(h.date, lang === "TR" ? "tr-TR" : "en-GB")} · {lang === "TR" ? h.dayTR : h.dayEN}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Scroll cue */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce text-white/30">
-        <ChevronDown className="h-5 w-5" strokeWidth={1} />
-      </div>
+      {/* Scroll cue — clicks to gallery */}
+      <a href="#gallery" aria-label="Galeriye git" className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce text-white/60 transition-colors hover:text-white">
+        <ChevronDown className="h-7 w-7" strokeWidth={2} />
+      </a>
     </section>
   );
 };

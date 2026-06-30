@@ -201,9 +201,29 @@ const Hero = () => {
             <p className={`text-[11px] ${certSub}`}>Belge No: 48-10917</p>
           </div>
         </div>
+
+        {/* Holidays widget — inline on mobile only */}
+        <div className={`mt-5 w-52 rounded-xl border p-3 backdrop-blur-sm sm:hidden ${isDay ? "border-white/25 bg-white/10" : "border-white/15 bg-black/30"}`}>
+          <div className="mb-2 flex items-center gap-1.5">
+            <CalendarDays className="h-3.5 w-3.5 text-amber-400" strokeWidth={1.5} />
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/80">
+              {lang === "TR" ? "Yaklaşan Tatiller" : "Upcoming Holidays"}
+            </p>
+          </div>
+          <div className="flex flex-col gap-1.5">
+            {HOLIDAYS.map((h) => (
+              <div key={h.date} className="flex flex-col gap-0.5">
+                <p className="text-[11px] leading-tight text-white/90 font-medium">{lang === "TR" ? h.tr : h.en}</p>
+                <p className="text-[10px] text-amber-400/90">
+                  {fmtDate(h.date, lang === "TR" ? "tr-TR" : "en-GB")} · {lang === "TR" ? h.dayTR : h.dayEN}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* ── UPCOMING HOLIDAYS WIDGET ──────────────── */}
+      {/* ── UPCOMING HOLIDAYS WIDGET — absolute on sm+ ── */}
       <div className={`absolute bottom-28 right-4 z-20 hidden w-52 rounded-xl border p-3 backdrop-blur-sm sm:block sm:right-8 ${isDay ? "border-white/25 bg-white/10" : "border-white/15 bg-black/30"}`}>
         <div className="mb-2 flex items-center gap-1.5">
           <CalendarDays className="h-3.5 w-3.5 text-amber-400" strokeWidth={1.5} />

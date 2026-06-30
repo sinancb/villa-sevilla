@@ -1,5 +1,6 @@
 import {
   BedDouble,
+  Bath,
   Users,
   Waves,
   Eye,
@@ -17,6 +18,7 @@ import { t } from "@/lib/i18n";
 
 const amenities = [
   { key: "bedrooms",  Icon: BedDouble },
+  { key: "bathrooms", Icon: Bath },
   { key: "guests",    Icon: Users },
   { key: "pool",      Icon: Waves },
   { key: "seaview",   Icon: Eye },

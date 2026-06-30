@@ -44,8 +44,9 @@ export const t = {
       EN: "Everything you need for a comfortable holiday",
     },
     items: {
-      bedrooms:  { TR: "4 Yatak Odası",        EN: "4 Bedrooms" },
-      guests:    { TR: "8 Misafir Kapasitesi", EN: "Sleeps 8 Guests" },
+      bedrooms:  { TR: "3 Yatak Odası",                    EN: "3 Bedrooms" },
+      bathrooms: { TR: "3 Ebeveyn Banyosu",               EN: "3 Ensuite Bathrooms" },
+      guests:    { TR: "6+1 Misafir Kapasitesi",           EN: "Sleeps up to 7 Guests" },
       pool:      { TR: "Özel Yüzme Havuzu",    EN: "Private Swimming Pool" },
       seaview:   { TR: "Deniz Manzarası",      EN: "Sea View" },
       ac:        { TR: "Klima (Tüm Odalarda)", EN: "Air Conditioning (All Rooms)" },
